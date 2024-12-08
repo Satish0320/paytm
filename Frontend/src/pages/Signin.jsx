@@ -5,10 +5,11 @@ import { Button } from "../components/Button";
 import { ButtomWarning } from "../components/BottonWarning";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 export const Signin = () => {
-
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -35,7 +36,7 @@ export const Signin = () => {
               setPassword(e.target.value)
             }}/>
             <div className="pt-4">
-              <Button label={"Sign in"} onClick={handlesignin} />
+              <Button label={"Sign in"} onClick={handlesignin}/>
             </div>
             <ButtomWarning 
             label={"Don't have an account? "}

@@ -7,14 +7,14 @@ import { useState } from "react";
 import axios from "axios"
 
 export const Signup = () => {
-  const [mail, setMail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
 
   const handelSignup = async () => {
        const response = await axios.post("http://localhost:4000/user/signup" , {
-            mail,
+            email,
             password,
             name,
             username
@@ -32,7 +32,7 @@ export const Signup = () => {
             placeholder="mail"
             lable={"Email"}
             onChange={(e) => {
-              setMail(e.target.value);
+              setEmail(e.target.value);
             }}
           />
           <InputBox

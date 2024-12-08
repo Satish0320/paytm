@@ -3,13 +3,7 @@ import { Button } from "./Button";
 
 export const Users = () => {
   // Replace with backend call
-  const [users, setUsers] = useState([
-    {
-      name: "Satish",
-      username: "Goku",
-      _id: 1,
-    },
-  ]);
+  const [users, setUsers] = useState([]);
 
   return (
     <>

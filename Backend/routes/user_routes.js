@@ -77,7 +77,7 @@ UserRouter.post("/signin", async (req, res) => {
       process.env.JWT_SECRET
     );
 
-    console.log(token);
+    // console.log(token);
 
     res.json({
       Token: token,

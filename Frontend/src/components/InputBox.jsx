@@ -1,12 +1,14 @@
-export function InputBox({ lable, placeholder, onChange }) {
+export function InputBox({ label, placeholder, onChange }) {
   return (
     <div>
-      <div className="text-sm, font-medium py-2">{lable}</div>
+      <span className="flex justify-start">
+      <label className="text-md text-gray-500 py-2">{label}</label>
+      </span>
       <div>
         <input
           onChange={onChange}
           placeholder={placeholder}
-          className="w-full py-1 border rounded border-slate-300"
+          className="w-full px-2 py-2 border rounded border-slate-300"
         />
       </div>
     </div>

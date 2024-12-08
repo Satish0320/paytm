@@ -26,41 +26,41 @@ export const Signup = () => {
     <div className="bg-slate-300 h-screen flex justify-center">
       <div className="flex flex-col justify-center">
         <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
-          <Heading lable={"Sign up"} />
-          <Subheading lable={"Enter your infromation to create an account"} />
+          <Heading label={"Sign up"} />
+          <Subheading label={"Enter your information to create an account"} />
           <InputBox
             placeholder="mail"
-            lable={"Email"}
+            label={"Email"}
             onChange={(e) => {
               setMail(e.target.value);
             }}
           />
           <InputBox
             placeholder="Password"
-            lable={"Password"}
+            label={"Password"}
             onChange={(e) => {
               setPassword(e.target.value);
             }}
           />
           <InputBox
             placeholder="Full Name"
-            lable={"Name"}
+            label={"Name"}
             onChange={(e) => {
               setName(e.target.value);
             }}
           />
           <InputBox
             placeholder="Username"
-            lable={"Username"}
+            label={"Username"}
             onChange={(e) => {
               setUsername(e.target.value);
             }}
           />
           <div className="pt-4">
-            <Button lable={"Sign Up"} onClick={handelSignup} />
+            <Button label={"Sign Up"} onClick={handelSignup} />
           </div>
           <ButtomWarning
-            lable={"Already have an account? "}
+            label={"Already have an account? "}
             buttontext={"sign in"}
             to={"/signin"}
           />

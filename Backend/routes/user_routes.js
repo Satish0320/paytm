@@ -146,6 +146,14 @@ UserRouter.get("/Finduser", UserMiddleware, async (req, res) => {
   });
 });
 
+UserRouter.get("/allUsers", UserMiddleware, async(req, res)=>{
+
+  const allusers = await usermodel.find()
+  res.json({
+    allusers
+  });
+})
+
 module.exports = {
   UserRouter,
 };

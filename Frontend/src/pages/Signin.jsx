@@ -35,10 +35,10 @@ export const Signin = () => {
               setPassword(e.target.value)
             }}/>
             <div className="pt-4">
-              <Button lable={"Sign in"} onClick={handlesignin} />
+              <Button label={"Sign in"} onClick={handlesignin} />
             </div>
             <ButtomWarning 
-            lable={"Don't have an account? "}
+            label={"Don't have an account? "}
              buttontext={"Sign up"} 
              to={"/signup"} />
           </div>

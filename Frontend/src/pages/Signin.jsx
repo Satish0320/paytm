@@ -15,10 +15,10 @@ export const Signin = () => {
             <InputBox placeholder="mail" label={"Email"} />
             <InputBox placeholder="Password" label={"Password"} />
             <div className="pt-4">
-              <Button lable={"Sign in"} />
+              <Button label={"Sign in"} />
             </div>
             <ButtomWarning 
-            lable={"Don't have an account? "}
+            label={"Don't have an account? "}
              buttontext={"Sign up"} 
              to={"/signup"} />
           </div>

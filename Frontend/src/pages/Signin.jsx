@@ -20,7 +20,6 @@ export const Signin = () => {
     })
     console.log(response.data.Token);
     localStorage.setItem("Token", response.data.Token)
-    
   }
 
     return (
@@ -36,7 +35,7 @@ export const Signin = () => {
               setPassword(e.target.value)
             }}/>
             <div className="pt-4">
-              <Button label={"Sign in"} onClick={handlesignin}/>
+              <Button label={"Sign in"} onClick={handlesignin} />
             </div>
             <ButtomWarning 
             label={"Don't have an account? "}

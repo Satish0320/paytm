@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 require("dotenv").config();
 
 const UserRouter = express.Router();
-const { usermodel, accountmodel } = require("../Datbase/Db");
+const { usermodel, accountmodel } = require("../Database/Db");
 const { UserMiddleware } = require("../middleware/usermiddleware");
 
 UserRouter.post("/signup", async (req, res) => {
@@ -88,6 +88,12 @@ UserRouter.post("/signin", async (req, res) => {
     });
   }
 });
+
+UserRouter.get("/dashboard", UserMiddleware, async (req,res)=>{
+  const user = await usermodel.findOne({_id: req.userId})
+  console.log(user)
+  res.json({user})
+})
 
 UserRouter.put("/update", UserMiddleware, async (req, res) => {
   const email = req.body.email;

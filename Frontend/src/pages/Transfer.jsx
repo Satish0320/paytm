@@ -15,11 +15,11 @@ export const Transfer = () => {
     
     <div className="flex justify-center h-screen bg-gray-100">
       <div className="h-full flex flex-col justify-center">
-        <div className="border h-min text-card-foreground max-w-md p-4 space-y-8 w-96 bg-white shadow-lg rounded-lg">
-          <div className="flex flex-col space-y-1.5 p-6">
+        <div className="border h-min text-card-foreground max-w-md p-4 w-96 bg-white shadow-lg rounded-lg">
+          <div className="flex flex-col space-y-1.5 p-4">
             <h2 className="text-3xl font-bold text-center">Send Money</h2>
           </div>
-          <div className="p-6">
+          <div className="px-6">
             <div className="flex items-center space-x-4">
               <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center">
                 <span className="text-2xl text-white">{username[0]}</span>

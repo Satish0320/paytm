@@ -40,10 +40,11 @@ UserRouter.post("/signup", async (req, res) => {
     name: name,
   });
 
-  const randomBalance = 1 + Math.random() * 10000;
+  const InitialBalance = 10000;
   await accountmodel.create({
+    accountId: newUser.accountId,
     userId: newUser._id,
-    balance: randomBalance,
+    balance: InitialBalance,
   });
 
   res.json({
@@ -90,7 +91,7 @@ UserRouter.post("/signin", async (req, res) => {
 });
 
 UserRouter.get("/dashboard", UserMiddleware, async (req,res)=>{
-  const user = await usermodel.findOne({_id: req.userId})
+  const user = await accountmodel.findOne({userId: req.userId}).populate("userId")
   console.log(user)
   res.json({user})
 })

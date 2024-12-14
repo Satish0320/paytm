@@ -15,13 +15,11 @@ AccountRouter.get("/balance", UserMiddleware, async (req, res) => {
 });
 
 AccountRouter.post("/transfer", UserMiddleware, async (req, res) => {
-    const {amount, receiverId} = req.body;
-    const Sender = await accountmodel.findOne({userId: req.userId})
-    const Receiver = await accountmodel.findOne({userId: receiverId})
-    Sender.balance = Sender.balance - parseInt(amount);
-    Receiver.balance = Receiver.balance + parseInt(amount);
-
-
+    const {amount, to} = req.body;
+    //this should be in transaction/session to avoid vulnerbilities
+    const Sender = await accountmodel.findOneAndUpdate({userId: req.userId}, { $inc:{balance: -parseInt(amount)}})
+    const Receiver = await accountmodel.findOneAndUpdate({userId: to},{ $inc:{balance: +parseInt(amount)}})
+    
   res.json({
     message: Sender,
   });

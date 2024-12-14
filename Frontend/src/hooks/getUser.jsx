@@ -11,7 +11,6 @@ export const getUser = () =>{
             }
           })
           setUser(response.data.user)
-          console.log(response.data.user)
         }
         main()
       },[])

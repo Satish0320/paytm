@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 require("dotenv").config();
 
 const UserRouter = express.Router();
-const { usermodel, accountmodel } = require("../Database/Db");
+// const { usermodel, accountmodel } = require("../Database/Db");
 const { usermodel, accountmodel } = require("../Database/Db");
 const { UserMiddleware } = require("../middleware/usermiddleware");
 
@@ -51,7 +51,7 @@ UserRouter.post("/signup", async (req, res) => {
   res.json({
     message: "User created ",
     userId: newUser._id,
-    balance: randomBalance,
+    balance: InitialBalance,
   });
 });
 
@@ -93,7 +93,7 @@ UserRouter.post("/signin", async (req, res) => {
 
 UserRouter.get("/dashboard", UserMiddleware, async (req,res)=>{
   const user = await usermodel.findOne({_id: req.userId})
-  console.log(user)
+  // console.log(user)
   res.json({user})
 })
 

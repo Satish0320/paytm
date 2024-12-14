@@ -10,7 +10,7 @@ export const getUser = () =>{
               Authorization: localStorage.getItem("Token")
             }
           })
-          setUser(response.data.user)
+          // setUser(response.data.user)
           console.log(response.data.user)
         }
         main()

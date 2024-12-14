@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 
 export const Signin = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -20,6 +20,7 @@ export const Signin = () => {
     })
     console.log(response.data.Token);
     localStorage.setItem("Token", response.data.Token)
+    navigate('/dashboard')
   }
 
     return (

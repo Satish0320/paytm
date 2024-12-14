@@ -6,6 +6,7 @@ require("dotenv").config();
 
 const UserRouter = express.Router();
 const { usermodel, accountmodel } = require("../Database/Db");
+const { usermodel, accountmodel } = require("../Database/Db");
 const { UserMiddleware } = require("../middleware/usermiddleware");
 
 UserRouter.post("/signup", async (req, res) => {
@@ -40,10 +41,11 @@ UserRouter.post("/signup", async (req, res) => {
     name: name,
   });
 
-  const randomBalance = 1 + Math.random() * 10000;
+  const InitialBalance = 10000;
   await accountmodel.create({
+    accountId: newUser.accountId,
     userId: newUser._id,
-    balance: randomBalance,
+    balance: InitialBalance,
   });
 
   res.json({

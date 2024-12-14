@@ -7,6 +7,10 @@ const Userschema = new Schema({
   password: String,
   username: String,
   name: String,
+  accountId:{
+    type: mongoose.Types.ObjectId,
+    ref: "Account",
+  },
 });
 
 const accountschema = new Schema({
